@@ -1,0 +1,1 @@
+# eylog-component-static
