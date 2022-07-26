@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="description" content="" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ey-demo.eylog.co.uk/eyMan/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="https://davidstutz.github.io/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.js"></script>
+    <script src="https://davidstutz.github.io/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#example-getting-started').multiselect({
+          selectAllText: 'All',
+          nonSelectedText: 'Select Nursery/Branch(s)',
+          includeSelectAllOption: true,
+          maxHeight: 400,
+        });
+      });
+      $(window).on("load",function(){
+        $(".mCustomScrollbar").mCustomScrollbar({
+          theme:"dark",
+          axis:"yx"
+        });
+      });
+  </script>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth'
+      });
+      calendar.render();
+    });
+
+  </script>
+
+    <style>
+      /* Its already present in your app */
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lato', sans-serif;
+        box-sizing: border-box;
+      }
+      .main-panel .panel-heading {
+        color: #fff;
+        background: #bdbb35;
+        padding: 3px 4px;
+      }
+      .main-panel .panel-heading h3 {
+        margin: 6px 10px;
+        font-size: 13px;
+        font-weight: 700;
+        display: inline-block;
+      }
+      /* end */
+
+      .filter-item {
+        position: relative;
+        margin-bottom: 3px;
+        display: block;
+      }
+      .filter-item input[type="checkbox"] {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+      }
+      .filter-item label {
+        position: relative;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000;
+        margin: 0;
+        padding-left: 23px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+      .filter-item label:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border: 1px solid #B9B9B9;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .filter-item label:after {
+        content: '';
+        display: none;
+        transform: rotate(45deg);
+        height: 10px;
+        width: 5px;
+        border-bottom: 1px solid #000000;
+        border-right: 1px solid #000000;
+        position: absolute;
+        top: 1px;
+        left: 5px;
+      }
+      .filter-item input[type="checkbox"]:checked + label:after, .filter-item[aria-expanded="true"] label:after {
+        display: block;
+      }
+      .filter-item-heading label {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 16px;
+      }
+      .filter-item-heading label:after {
+        border-bottom-color: #6D6D0C;
+        border-right-color: #6D6D0C;
+      }
+      .filter-item-heading input[type="checkbox"]:checked + label:before {
+        border-color: #6D6D0C;
+      }
+      .filter-group-inner {
+        padding-left: 23px;
+      }
+      .tumbleweed input[type="checkbox"]:checked + label:before, .tumbleweed[aria-expanded="true"] label:before {
+        border-color: #E1AA86;
+        background-color: #E1AA86;
+      }
+      .oldGold input[type="checkbox"]:checked + label:before, .oldGold[aria-expanded="true"] label:before {
+        border-color: #BDBB35;
+        background-color: #BDBB35;
+      }
+      .turquoiseBlue input[type="checkbox"]:checked + label:before, .turquoiseBlue[aria-expanded="true"] label:before {
+        border-color: #64D8E6;
+        background-color: #64D8E6;
+      }
+      .glacier input[type="checkbox"]:checked + label:before, .glacier[aria-expanded="true"] label:before {
+        border-color: #76B2DA;
+        background-color: #76B2DA;
+      }
+      .blush input[type="checkbox"]:checked + label:before, .blush[aria-expanded="true"] label:before {
+        border-color: #E4A995;
+        background-color: #E4A995;
+      }
+      .birdFlower input[type="checkbox"]:checked + label:before, .birdFlower[aria-expanded="true"] label:before {
+        border-color: #D7C921;
+        background-color: #D7C921;
+      }
+      .geraldine input[type="checkbox"]:checked + label:before, .geraldine[aria-expanded="true"] label:before {
+        border-color: #FF8780;
+        background-color: #FF8780;
+      }
+      .calender-action {
+        display: inline-flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .calender-action a {
+        display: inline-block;
+        color: #fff;
+      }
+      .calender-action span {
+        padding: 0 10px;
+      }
+      .calender-action a i {
+        font-size: 20px;
+      }
+
+      /* Import Bank Holidays Modal */
+      .holiday-list {
+        height: 222px;
+        background: rgba(217,217,217, 0.3);
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .holiday-list .placeholder-text {
+        color: #6D6D0C;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .checked-box {
+        position: relative;
+        display: inline-block;
+      }
+      .checked-box input[type="checkbox"] {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+      }
+      .checked-box label {
+        position: relative;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000;
+        margin: 0;
+        padding-left: 23px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+      .checked-box label:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: transparent;
+        border: 1px solid #6D6D0C;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .checked-box label:after {
+        content: '';
+        display: none;
+        transform: rotate(45deg);
+        height: 10px;
+        width: 5px;
+        border-bottom: 1px solid #6D6D0C;
+        border-right: 1px solid #6D6D0C;
+        position: absolute;
+        top: 1px;
+        left: 5px;
+      }
+      .checked-box input[type="checkbox"]:checked + label:after {
+        display: block;
+      }
+      .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+        background-color: #6D6D0C;
+      }
+      .mCSB_inside >.mCSB_container {
+        margin-right: 15px;
+      }
+      .holiday-list ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+      }
+      .holiday-list ul li {
+        padding: 0 5px;
+        margin-bottom: 10px;
+        width: 25%;
+      }
+      .holiday-list .holiday-list-item {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+        padding: 10px;
+      }
+      .holiday-list .holiday-list-item .mute-text {
+        margin: 0;
+        font-size: 10px;
+        line-height: 12px;
+        color: #898989;
+      }
+      .holiday-list .mCSB_scrollTools {
+        right: -5px;
+      }
+      .form-group-item label {
+        margin: 0;
+        font-size: 12px;
+        line-height: 11px;
+        color: #6D6D0C;
+        font-weight: 500;
+      }
+      .multiselect-dropdown .multiselect-native-select .btn-group {
+        display: block;
+      }
+      .multiselect-dropdown .multiselect-native-select .multiselect {
+        height: 32px;
+        background-color: #fff;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        text-align: left;
+      }
+      .multiselect-dropdown .btn-group.open .dropdown-toggle {
+        box-shadow: none;
+      }
+      .multiselect-dropdown .multiselect-container {
+        width: 100%;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+        border-radius: 3px;
+        border: none;
+      }
+      .multiselect-dropdown .multiselect-container .multiselect-option, .multiselect-dropdown .multiselect-container .multiselect-group, .multiselect-dropdown .multiselect-container .multiselect-all {
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(196,196,196, 0.3);
+      }
+      .multiselect-dropdown .multiselect-container .form-check {
+        position: relative;
+        padding: 0;
+      }
+      .multiselect-dropdown .multiselect-container .form-check input[type="checkbox"] {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: pointer;
+        opacity: 0;
+      }
+      .multiselect-dropdown .multiselect-container .form-check label {
+        position: relative;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000;
+        margin: 0;
+        padding-left: 23px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+      .multiselect-dropdown .multiselect-container .form-check label:before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: transparent;
+        border: 1px solid #6D6D0C;
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .multiselect-dropdown .multiselect-container .form-check label:after {
+        content: '';
+        display: none;
+        transform: rotate(45deg);
+        height: 10px;
+        width: 5px;
+        border-bottom: 1px solid #6D6D0C;
+        border-right: 1px solid #6D6D0C;
+        position: absolute;
+        top: 1px;
+        left: 5px;
+      }
+      .multiselect-dropdown .multiselect-container .form-check input[type="checkbox"]:checked + label:after {
+        display: block;
+      }
+      .multiselect-dropdown .multiselect-container .multiselect-option:hover, .multiselect-dropdown .multiselect-container .multiselect-group:hover, .multiselect-container .multiselect-option.active:not(.multiselect-active-item-fallback), .multiselect-container .multiselect-group.active:not(.multiselect-active-item-fallback), .multiselect-dropdown .multiselect-container .multiselect-all:hover, .multiselect-all.active:not(.multiselect-active-item-fallback) {
+        background-color: transparent !important;
+      }
+      .multiselect-dropdown .multiselect-container .multiselect-option.multiselect-group-option-indented {
+        padding-left: 0.75rem;
+      }
+      .multiselect-dropdown .multiselect[title="Select Nursery/Branch(s)"] .multiselect-selected-text {
+        font-size: 12px;
+        line-height: 14px;
+        color: #171717;
+        opacity: 0.5;
+      }
+      .multiselect-dropdown .dropdown-toggle {
+        padding-right: 20px;
+        position: relative;
+      }
+      .multiselect-dropdown .dropdown-toggle:before {
+        content:'';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid black;
+        position: absolute;
+        top: 50%;
+        right: 2px;
+        margin-top: -4px;
+      }
+      .multiselect-dropdown .btn-group.open .dropdown-toggle:before {
+        transform: rotate(-180deg);
+      }
+      .fc-media-screen {
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel panel-success main-panel">
+        <div class="panel-heading" style="display: flex; align-items: center; justify-content: space-between;">
+          <h3 class="media-heading">Calendar</h3>
+          <div class="calender-action">
+            <a href="javascript:void(0)"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+            <span>June 2022</span>
+            <a href="javascript:void(0)"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </div>
+          <h3 class="media-heading pull-right">
+            <a href="javascipt:none;" class="text-underline" id="add-jubilee-holiday" style="color: #fff; text-decoration: underline;">Add Platinum Jubilee Bank Holiday</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-2">
+              <div class="filter-calender">
+                <div class="filter-group">
+                  <a class="filter-item filter-item-heading" data-toggle="collapse" href="#staff" aria-expanded="false">
+                    <label>Staff</label>
+                  </a>
+                  <div class="collapse" id="staff">
+                    <div class="filter-group-inner">
+                      <a class="filter-item tumbleweed" data-toggle="collapse" href="#absence" aria-expanded="false">
+                        <label>Absence</label>
+                      </a>
+                      <div class="collapse" id="absence">
+                        <div class="filter-group-inner">
+                          <div class="filter-item oldGold">
+                            <input type="checkbox">
+                            <label>Holiday</label>
+                          </div>
+                          <div class="filter-item">
+                            <input type="checkbox">
+                            <label>Late Start</label>
+                          </div>
+                          <div class="filter-item">
+                            <input type="checkbox">
+                            <label>Early Finish</label>
+                          </div>
+                          <div class="filter-item turquoiseBlue">
+                            <input type="checkbox">
+                            <label>Sickness</label>
+                          </div>
+                          <div class="filter-item glacier">
+                            <input type="checkbox">
+                            <label>Dependent Leave</label>
+                          </div>
+                          <div class="filter-item blush">
+                            <input type="checkbox">
+                            <label>Compasionate Leave</label>
+                          </div>
+                          <div class="filter-item turquoiseBlue">
+                            <input type="checkbox">
+                            <label>Working From Home</label>
+                          </div>
+                          <div class="filter-item birdFlower">
+                            <input type="checkbox">
+                            <label>Time in Leiu</label>
+                          </div>
+                          <div class="filter-item geraldine">
+                            <input type="checkbox">
+                            <label>Unpaid Absence</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item glacier">
+                        <input type="checkbox">
+                        <label>Birthday </label>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item blush">
+                        <input type="checkbox">
+                        <label>Events </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <a class="filter-item filter-item-heading" data-toggle="collapse" href="#children" aria-expanded="false">
+                    <label>Children</label>
+                  </a>
+                  <div class="collapse" id="children">
+                    <div class="filter-group-inner">
+                      <a class="filter-item tumbleweed" data-toggle="collapse" href="#absence-01" aria-expanded="false">
+                        <label>Absence</label>
+                      </a>
+                      <div class="collapse" id="absence-01">
+                        <div class="filter-group-inner">
+                          <div class="filter-item oldGold">
+                            <input type="checkbox">
+                            <label>Holiday</label>
+                          </div>
+                          <div class="filter-item turquoiseBlue">
+                            <input type="checkbox">
+                            <label>Late Start</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item glacier">
+                        <input type="checkbox">
+                        <label>Birthday </label>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item blush">
+                        <input type="checkbox">
+                        <label>Events </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <a class="filter-item filter-item-heading" data-toggle="collapse" href="#children-02" aria-expanded="false">
+                    <label>Children 02</label>
+                  </a>
+                  <div class="collapse" id="children-02">
+                    <div class="filter-group-inner">
+                      <a class="filter-item tumbleweed" data-toggle="collapse" href="#absence-02" aria-expanded="false">
+                        <label>Absence</label>
+                      </a>
+                      <div class="collapse" id="absence-02">
+                        <div class="filter-group-inner">
+                          <div class="filter-item oldGold">
+                            <input type="checkbox">
+                            <label>Holiday</label>
+                          </div>
+                          <div class="filter-item turquoiseBlue">
+                            <input type="checkbox">
+                            <label>Late Start</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item glacier">
+                        <input type="checkbox">
+                        <label>Birthday </label>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item blush">
+                        <input type="checkbox">
+                        <label>Events </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <a class="filter-item filter-item-heading" data-toggle="collapse" href="#children-03" aria-expanded="false">
+                    <label>Children 03</label>
+                  </a>
+                  <div class="collapse" id="children-03">
+                    <div class="filter-group-inner">
+                      <a class="filter-item tumbleweed" data-toggle="collapse" href="#absence-03" aria-expanded="false">
+                        <label>Absence</label>
+                      </a>
+                      <div class="collapse" id="absence-03">
+                        <div class="filter-group-inner">
+                          <div class="filter-item oldGold">
+                            <input type="checkbox">
+                            <label>Holiday</label>
+                          </div>
+                          <div class="filter-item turquoiseBlue">
+                            <input type="checkbox">
+                            <label>Late Start</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item glacier">
+                        <input type="checkbox">
+                        <label>Birthday </label>
+                      </div>
+                    </div>
+                    <div class="filter-group-inner">
+                      <div class="filter-item blush">
+                        <input type="checkbox">
+                        <label>Events </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checked-box">
+        <input type="checkbox">
+        <label>Demo</label>
+      </div>
+
+      <div style="margin: 10px;"></div>
+
+      <div class="holiday-list">
+        <div class="placeholder-text">Select Country, Year and Branch to view and select from holiday list.</div>
+      </div>
+
+      <div style="margin: 10px;"></div>
+
+      <div class="holiday-list mCustomScrollbar">
+        <ul>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+          <li>
+            <div class="holiday-list-item">
+              <div class="checked-box">
+                <input type="checkbox">
+                <label>Demo</label>
+              </div>
+              <span class="mute-text">Mon, 3 Jan 2022</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="margin: 10px;"></div>
+
+      <div class="form-group-item">
+        <label>Import to</label>
+        <div class="multiselect-dropdown">
+          <select id="example-getting-started" multiple="multiple">
+            <option value="cheese">Cheese</option>
+            <option value="tomatoes">Tomatoes</option>
+            <option value="mozarella">Mozzarella</option>
+            <option value="mushrooms">Mushrooms</option>
+            <option value="pepperoni">Pepperoni</option>
+            <option value="onions">Onions</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin: 50px;"></div>
+
+
+      <div id='calendar' class="mCustomScrollbar"></div>
+
+      <div style="margin: 50px;"></div>
+
+    </div>
+  </body>
+</html>

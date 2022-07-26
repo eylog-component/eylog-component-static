@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="description" content="" />
+
+    <link rel="stylesheet" href="assets/css/prism.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ey-demo.eylog.co.uk/eyMan/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap">
+    <link rel="stylesheet" href="https://ey-demo.eylog.co.uk/eyMan/css/style.css?v=1.0.9" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css"/>
+    <link rel="stylesheet" href="assets/css/custom-global.css" />
+
+    <script src="https://ey-demo.eylog.co.uk/eyMan/js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- Prism JS -->
+    <script src="assets/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <!-- Prism JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.js"></script>
+    <script src="assets/js/common.js"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="example-group">
+        <h2>Checkbox with label - Example</h2>
+        <div class="checked-box" style="margin: 20px 0;">
+          <input type="checkbox">
+          <label>Demo</label>
+        </div>
+        <pre>
+          <code class="line-numbers language-markup">
+            &lt;div class="checked-box"&gt;
+              &lt;input type="checkbox"&gt;
+              &lt;label&gt;Demo&lt;/label&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
+        <pre>
+          <code class="line-numbers language-css">
+            .checked-box {
+              position: relative;
+              display: inline-block;
+            }
+            .checked-box label {
+              position: relative;
+              font-size: 12px;
+              line-height: 15px;
+              color: #000;
+              margin: 0;
+              padding-left: 23px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+            .checked-box label:before {
+              content: "";
+              width: 15px;
+              height: 15px;
+              background-color: transparent;
+              border: 1px solid #6D6D0C;
+              border-radius: 3px;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            .checked-box label:after {
+              content: "";
+              display: none;
+              transform: rotate(45deg);
+              height: 10px;
+              width: 5px;
+              border-bottom: 1px solid #6D6D0C;
+              border-right: 1px solid #6D6D0C;
+              position: absolute;
+              top: 1px;
+              left: 5px;
+            }
+            .checked-box input[type=checkbox] {
+              margin: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              cursor: pointer;
+              opacity: 0;
+            }
+            .checked-box input[type=checkbox]:checked + label:after {
+              display: block;
+            }
+          </code>
+        </pre>
+
+        <h2 style="margin-top: 50px;">Checkbox Only - Example</h2>
+        <div class="checked-box checked-box-only" style="margin: 20px 0;">
+          <input type="checkbox">
+          <label></label>
+        </div>
+        <pre>
+          <code class="line-numbers language-markup">
+            &lt;div class="checked-box checked-box-only"&gt;
+              &lt;input type="checkbox"&gt;
+              &lt;label&gt;Demo&lt;/label&gt;
+            &lt;/div&gt;
+          </code>
+        </pre>
+        <pre>
+          <code class="line-numbers language-css">
+            .checked-box.checked-box-only {
+              width: 15px;
+              height: 15px;
+              overflow: hidden;
+            }
+            .checked-box.checked-box-only label, .checked-box.checked-box-only input {
+              width: 15px;
+              height: 15px;
+              padding: 0;
+            }
+          </code>
+        </pre>
+      </div>
+
+      <div class="example-group" style="margin-top: 50px;">
+        <h2>Payment Table - Example</h2>
+
+        <div class="listBox" style="margin: 20px 0;">
+          <div class="tableHover newtable-container mCustomScrollbar-h">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>
+                    <div class="checked-box checked-box-only">
+                      <input type="checkbox">
+                      <label></label>
+                    </div>
+                  </th>
+                  <th>Child Name</th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Payment Date</a>
+                  </th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Payment No.</a>
+                  </th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Payment Mode</a>
+                  </th>
+                  <th>Child URN</th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Payment Reference</a>
+                  </th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Notes</a>
+                  </th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Amount Paid</a>
+                  </th>
+                  <th>Balance</th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Locked</a>
+                  </th>
+                  <th>
+                    <a class="sort-link" href="javascript:void(0)">Status</a>
+                  </th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="checked-box checked-box-only">
+                      <input type="checkbox">
+                      <label></label>
+                    </div>
+                  </td>
+                  <td><span class="text-block">Aaaaaa Asasasasasasasasasasasasasasas Asasasasasasasasasasasasasasasasad Sdsdsdsdsdsdsdsdsd Sdsdsdsdsdsdsdsd</span></td>
+                  <td>15-07-2022</td>
+                  <td>8204</td>
+                  <td>Credit/Debit Card</td>
+                  <td>90902670</td>
+                  <td>1233</td>
+                  <td>
+                    <span class="text-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                  </td>
+                  <td>12223.00</td>
+                  <td>12223.00</td>
+                  <td>No</td>
+                  <td>
+                    <a href="javascript:void(0)"><span class="badge not-allocated">NOT ALLOCATED</span></a>
+                  </td>
+                  <td>
+                    <div class="action-list">
+                      <a class="view action" title="View" alt="View" href="#"><i class="fa fa-eye"></i></a>
+                      <a class="update action" title="Edit" alt="Edit" href="#"><i class="fa fa-pencil"></i></a>
+                      <a class="delete action" title="Delete" alt="Delete" href="#"><i class="fa fa-trash-o"></i></a>
+                      <a class="action sendPaymentReceipt" title="Send Receipt" alt="Allocate Payment" href="#"><i class="fa fa-envelope"></i></a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="checked-box checked-box-only">
+                      <input type="checkbox">
+                      <label></label>
+                    </div>
+                  </td>
+                  <td><span class="text-block">Testfinal Finaltest</span></td>
+                  <td>15-07-2022</td>
+                  <td>8204</td>
+                  <td>Credit/Debit Card</td>
+                  <td>90902670</td>
+                  <td>1233</td>
+                  <td><span class="text-block">Lorem ipsum dolor sit amet</span></td>
+                  <td>12223.00</td>
+                  <td>12223.00</td>
+                  <td>No</td>
+                  <td>
+                    <a href="javascript:void(0)"><span class="badge allocated">ALLOCATED</span></a>
+                  </td>
+                  <td>
+                    <div class="action-list">
+                      <a class="view action" title="View" alt="View" href="#"><i class="fa fa-eye"></i></a>
+                      <a class="update action" title="Edit" alt="Edit" href="#"><i class="fa fa-pencil"></i></a>
+                      <a class="delete action" title="Delete" alt="Delete" href="#"><i class="fa fa-trash-o"></i></a>
+                      <a class="action sendPaymentReceipt" title="Send Receipt" alt="Allocate Payment" href="#"><i class="fa fa-envelope"></i></a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="checked-box checked-box-only">
+                      <input type="checkbox">
+                      <label></label>
+                    </div>
+                  </td>
+                  <td><span class="text-block">Aaaaaa Asasasasasasasasasasasasasasas Asasasasasasasasasasasasasasasasad Sdsdsdsdsdsdsdsdsd Sdsdsdsdsdsdsdsd</span></td>
+                  <td>15-07-2022</td>
+                  <td>8204</td>
+                  <td>Credit/Debit Card</td>
+                  <td>90902670</td>
+                  <td>1233</td>
+                  <td>
+                    <span class="text-block">Lorem</span>
+                  </td>
+                  <td>12223.00</td>
+                  <td>12223.00</td>
+                  <td>No</td>
+                  <td>
+                    <a href="javascript:void(0)"><span class="badge not-allocated">NOT ALLOCATED</span></a>
+                  </td>
+                  <td>
+                    <div class="action-list">
+                      <a class="view action" title="View" alt="View" href="#"><i class="fa fa-eye"></i></a>
+                      <a class="update action" title="Edit" alt="Edit" href="#"><i class="fa fa-pencil"></i></a>
+                      <a class="delete action" title="Delete" alt="Delete" href="#"><i class="fa fa-trash-o"></i></a>
+                      <a class="action sendPaymentReceipt" title="Send Receipt" alt="Allocate Payment" href="#"><i class="fa fa-envelope"></i></a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="checked-box checked-box-only">
+                      <input type="checkbox">
+                      <label></label>
+                    </div>
+                  </td>
+                  <td><span class="text-block">Lorem ipsum dolor</span></td>
+                  <td>15-07-2022</td>
+                  <td>8204</td>
+                  <td>Credit/Debit Card</td>
+                  <td>90902670</td>
+                  <td>1233</td>
+                  <td>
+                    <span class="text-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                  </td>
+                  <td>12223.00</td>
+                  <td>12223.00</td>
+                  <td>No</td>
+                  <td>
+                    <a href="javascript:void(0)"><span class="badge not-allocated">NOT ALLOCATED</span></a>
+                  </td>
+                  <td>
+                    <div class="action-list">
+                      <a class="view action" title="View" alt="View" href="#"><i class="fa fa-eye"></i></a>
+                      <a class="update action" title="Edit" alt="Edit" href="#"><i class="fa fa-pencil"></i></a>
+                      <a class="delete action" title="Delete" alt="Delete" href="#"><i class="fa fa-trash-o"></i></a>
+                      <a class="action sendPaymentReceipt" title="Send Receipt" alt="Allocate Payment" href="#"><i class="fa fa-envelope"></i></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <pre>
+        <code class="line-numbers language-markup">
+          &lt;div class="table-responsive tableHover newtable-container"&gt;
+            &lt;table class="table"&gt;
+              &lt;thead&gt;
+                &lt;tr&gt;
+                  &lt;th&gt;
+                    &lt;div class="checked-box checked-box-only"&gt;
+                      &lt;input type="checkbox"&gt;
+                      &lt;label&gt;&lt;/label&gt;
+                    &lt;/div&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;Child Name&lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Payment Date&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Payment No.&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Payment Mode&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;Child URN&lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Payment Reference&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Notes&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Amount Paid&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;Balance&lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Locked&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;
+                    &lt;a class="sort-link" href="javascript:void(0)"&gt;Status&lt;/a&gt;
+                  &lt;/th&gt;
+                  &lt;th&gt;&lt;/th&gt;
+                &lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;
+                    &lt;div class="checked-box checked-box-only"&gt;
+                      &lt;input type="checkbox"&gt;
+                      &lt;label&gt;&lt;/label&gt;
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;&lt;span class="text-block"&gt;Aaaaaa Asasasasasasasasasasasasasasas Asasasasasasasasasasasasasasasasad Sdsdsdsdsdsdsdsdsd Sdsdsdsdsdsdsdsd&lt;/span&gt;&lt;/td&gt;
+                  &lt;td&gt;15-07-2022&lt;/td&gt;
+                  &lt;td&gt;8204&lt;/td&gt;
+                  &lt;td&gt;Credit/Debit Card&lt;/td&gt;
+                  &lt;td&gt;90902670&lt;/td&gt;
+                  &lt;td&gt;1233&lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;span class="text-block"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/span&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;12223.00&lt;/td&gt;
+                  &lt;td&gt;12223.00&lt;/td&gt;
+                  &lt;td&gt;No&lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;a href="javascript:void(0)"&gt;&lt;span class="badge not-allocated"&gt;NOT ALLOCATED&lt;/span&gt;&lt;/a&gt;
+                  &lt;/td&gt;
+                  &lt;td&gt;
+                    &lt;div class="action-list"&gt;
+                      &lt;a class="view action" title="View" alt="View" href="#"&gt;&lt;i class="fa fa-eye"&gt;&lt;/i&gt;&lt;/a&gt;
+                      &lt;a class="update action" title="Edit" alt="Edit" href="#"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&lt;/a&gt;
+                      &lt;a class="delete action" title="Delete" alt="Delete" href="#"&gt;&lt;i class="fa fa-trash-o"&gt;&lt;/i&gt;&lt;/a&gt;
+                      &lt;a class="action sendPaymentReceipt" title="Send Receipt" alt="Allocate Payment" href="#"&gt;&lt;i class="fa fa-envelope"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;/div&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                ...
+              &lt;/tbody&gt;
+            &lt;/table&gt;
+          &lt;/div&gt;
+        </code>
+      </pre>
+
+      <pre>
+        <code class="line-numbers language-css">
+          .newtable-container .table {
+            margin: 0;
+          }
+          
+          .newtable-container thead th {
+            white-space: nowrap;
+            vertical-align: middle !important;
+            border-bottom-width: 1px !important;
+            border-right: 1px solid #ddd;
+          }
+          
+          .newtable-container .action-list {
+            white-space: nowrap;
+          }
+          
+          .newtable-container .badge {
+            font-size: 11px;
+            padding: 3px 7px 4px;
+            border-radius: 4px;
+          }
+          
+          .newtable-container .badge.not-allocated {
+            background: #bdbb35;
+          }
+          
+          .newtable-container .badge.allocated {
+            background: #660;
+          }
+          
+          .newtable-container .text-block {
+            display: block;
+            width: 200px;
+            word-break: break-word;
+          }
+          
+          .newtable-container .checked-box {
+            top: 3px;
+          }
+          
+          .newtable-container.mCustomScrollbar-h {
+            padding-bottom: 20px;
+          }
+
+          /* mCustomScrollbar */
+          .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+            right: 15px;
+            left: 15px;
+          }
+          
+          .mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+            bottom: 0;
+          }
+          
+          .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+            background-color: #6D6D0C;
+          }
+          
+          .mCSB_inside > .mCSB_container {
+            margin-right: 15px;
+          }
+        </code>
+      </pre>
+      <pre>
+        <code class="line-numbers language-js">
+          &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css"/&gt;
+          &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.js"&gt;&lt;/script&gt;
+          $(".mCustomScrollbar-h").mCustomScrollbar({
+            theme:"dark",
+            axis:"x",
+            scrollbarPosition: "outside"
+          });
+        </code>
+      </pre>
+    </div>
+  </body>
+</html>

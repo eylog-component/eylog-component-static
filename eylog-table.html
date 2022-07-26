@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="description" content="" />
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+      /* Its already present in your app */
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lato', sans-serif;
+        box-sizing: border-box;
+      }
+
+      .container {
+        padding: 0 15px;
+        margin: 15px auto;
+      }
+      /* End */
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+      .nursery-tracker-table .table .title {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+      }
+      .nursery-tracker-table .table .darkgray-text {
+        color: #9D9D9D;
+      }
+      .nursery-tracker-table .table {
+        white-space: nowrap;
+        margin: 0;
+        border-collapse: separate;
+        border-spacing: 0;
+        table-layout: fixed;
+        width: 100%;
+        min-width: 1474px;
+      }
+      .nursery-tracker-table .table td,
+      .nursery-tracker-table .table th {
+        border: 1px solid #E2E2E2;
+        padding: 0;
+        font-size: 12px;
+        font-weight: 400;
+        color: #0B0B0B;
+        line-height: 12px;
+        text-align: center;
+        white-space: normal;
+      }
+      .nursery-tracker-table .table th {
+        border-left: 0;
+      }
+      .nursery-tracker-table .table th:first-child {
+        border-left: 1px solid #E2E2E2;
+      }
+      .nursery-tracker-table .table th span {
+        font-weight: 700;
+        color: #6D6D0C;
+        display: block;
+        margin-top: 8px;
+      }
+      .nursery-tracker-table .table thead .inner-table th:first-child {
+        position: static;
+      }
+      .nursery-tracker-table .table tbody td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #fff;
+      }
+      .nursery-tracker-table .table thead tr th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        width: 130px;
+        background: #fff;
+      }
+      .nursery-tracker-table .table thead tr .inner-table th {
+        width: auto;
+      }
+      .nursery-tracker-table .table .deepskyblue {
+        background: rgba(0,163,255, 0.5);
+      }
+
+      .nursery-tracker-table .table .palegreen {
+        background: #99EAB5;
+      }
+      .nursery-tracker-table .table .salmon {
+        background: #FF8780;
+      }
+
+      .nursery-tracker-table .inner-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .nursery-tracker-table .inner-table th, .nursery-tracker-table .inner-table td {
+        border: none;
+        padding: 10px;
+      }
+      /* .nursery-tracker-table .inner-table th:first-child {
+        border-left: 0;
+      } */
+      .nursery-tracker-table .inner-table tr:nth-child(2) th {
+        border-top: 2px solid #E2E2E2;
+        border-left: 1px solid #E2E2E2;
+      }
+      /*.nursery-tracker-table .inner-table tr:nth-child(2) th:first-child {
+        border-left: 0;
+      } */
+      .nursery-tracker-table .inner-table td {
+        border-left: 1px solid #E2E2E2;
+      }
+      .nursery-tracker-table .table tbody .inner-table td:first-child {
+        position: static;
+        background: transparent;
+        border-left: 0;
+      }
+      .nursery-tracker-table .table tbody td span {
+        display: block;
+        padding: 10px;
+      }
+
+      @media (min-width: 1500px) {
+        .nursery-tracker-table .table {
+          min-width: 2240px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="table-responsive nursery-tracker-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th rowspan="2"><div class="title fixed-col">Rooms</div></th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>03/01/2022</p>
+                      <span>Mon</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>04/01/2022</p>
+                      <span>Tue</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>05/01/2022</p>
+                      <span>Wed</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>06/01/2022</p>
+                      <span>Thr</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>07/01/2022</p>
+                      <span>Fri</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>10/01/2022</p>
+                      <span>Mon</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>11/01/2022</p>
+                      <span>Tue</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>12/01/2022</p>
+                      <span>Wed</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>13/01/2022</p>
+                      <span>Thr</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>14/01/2022</p>
+                      <span>Fri</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>17/01/2022</p>
+                      <span>Mon</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+              <th>
+                <table class="inner-table">
+                  <tr>
+                    <th colspan="2">
+                      <p>18/01/2022</p>
+                      <span>Tue</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>AM</th>
+                    <th>PM</th>
+                  </tr>
+                </table>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span style="background: #FF8A00; color: #fff;">Baby Room (100)</span>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Availability</td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table palegreen" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Occupancy (FTE)</td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Occupancy (%)</td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Children Starting (during this time)</td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>Children Waitlisted</td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table salmon" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span style="background: #FF00B8; color: #fff;">Demo Room (90)</span>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>68</td>
+                    <td>74</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>72</td>
+                    <td>83</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>65</td>
+                    <td>68</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>74</td>
+                    <td>72</td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="inner-table deepskyblue" colspan="2">
+                  <tr>
+                    <td>83</td>
+                    <td>65</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
