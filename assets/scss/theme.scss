@@ -140,3 +140,36 @@ div.code-toolbar>.toolbar>.toolbar-item>a, div.code-toolbar>.toolbar>.toolbar-it
 .mCSB_inside >.mCSB_container {
   margin-right: 15px;
 }
+
+
+.table-fixed .table {
+  margin: 0;
+}
+.table-fixed .fixed-col {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.table-fixed thead th.fixed-col {
+  background: #333;
+  color: #fff;
+  top: 0;
+}
+.table-fixed tfoot,
+.table-fixed tfoot th.fixed-col,
+.table-fixed tfoot td.fixed-col {
+  bottom: 0;
+  background: #666;
+  color: #fff;
+  z-index:4;
+}
+
+.table-fixed tbody td.fixed-col:first-child {
+  left: 0;
+  z-index: 2;
+  background: #ccc;
+}
+.table-fixed thead th.fixed-col:first-child,
+.table-fixed tfoot td.fixed-col:first-child {
+  z-index: 5;
+}

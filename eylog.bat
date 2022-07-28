@@ -1,0 +1,1 @@
+sass --watch  "/Users/mds/Documents/Sushanta/Projects/eylog-component-static/assets/scss/theme.scss":"/Users/mds/Documents/Sushanta/Projects/eylog-component-static/assets/css/custom-global.css"
